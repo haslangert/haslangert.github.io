@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f0f0f0;
@@ -15,7 +15,7 @@ body {
 
 /* Header */
 header {
-    background-color: #333;
+    background-color: rgb(50, 58, 69);
     color: white;
     padding: 20px;
     position: fixed;
@@ -36,7 +36,9 @@ header {
 
 header h1 {
     margin: 0;
-    color: rgb(255, 153, 0); /* Textfarbe auf RGB(255, 153, 0) gesetzt */
+    color: rgb(212, 175, 55); /* Dezentes Gold */
+    font-weight: 600;
+    font-size: 2.2em; /* Größere Schrift für Mobilgeräte */
 }
 
 /* Menü-Schaltfläche (Hamburger-Button) */
@@ -96,7 +98,7 @@ header h1 {
 }
 
 .main-nav ul li a:hover {
-    color: rgb(255, 153, 0); /* Hover-Effekt: Schriftfarbe auf RGB(255, 153, 0) */
+    color: rgb(212, 175, 55); /* Hover-Effekt: Dezentes Gold */
 }
 
 /* Mobile Navigation */
@@ -106,7 +108,7 @@ header h1 {
     right: -250px;
     width: 250px;
     height: 100vh;
-    background-color: #333;
+    background-color: rgb(50, 58, 69);
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
@@ -206,7 +208,7 @@ section {
 
 /* Footer */
 footer {
-    background-color: #333;
+    background-color: rgb(50, 58, 69);
     color: white;
     text-align: center;
     padding: 10px 0;
@@ -227,5 +229,26 @@ footer {
 
     .main-nav.mobile {
         display: flex;
+    }
+
+    /* Anpassungen für mobile Geräte */
+    body {
+        padding-top: 60px;
+    }
+
+    header h1 {
+        font-size: 1.8em; /* Kleinere Schrift für mobile Geräte */
+    }
+
+    section {
+        padding: 20px; /* Weniger Padding auf mobilen Geräten */
+    }
+
+    .parallax .content {
+        max-width: 90%; /* Breiterer Inhalt auf mobilen Geräten */
+    }
+
+    .main-nav ul li a {
+        font-size: 16px; /* Kleinere Schriftgröße für das Menü */
     }
 }
