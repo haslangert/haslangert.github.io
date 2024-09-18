@@ -172,7 +172,7 @@ header h1 {
     left: 10px;
     font-size: 40px;
     opacity: 0;
-    transition: opacity 0.8s ease;
+    transition: opacity 1s ease; /* Sanftes Ein- und Ausblenden */
 }
 
 .floralwhite-bg {
@@ -185,11 +185,6 @@ header h1 {
     color: #333;
 }
 
-.parallax.fade-out {
-    background-position: center 20%; /* Bewegt das Bild nach unten */
-    opacity: 0.7; /* Bild verblassen */
-}
-
 .parallax .content {
     max-width: 800px;
     margin: 0 auto;
@@ -199,38 +194,3 @@ header h1 {
 
 /* Symbole anzeigen */
 .symbol.fade-in {
-    opacity: 1;
-}
-
-/* Sektionen */
-section {
-    padding: 40px;
-    background-color: #fff;
-    color: #333;
-}
-
-/* Footer */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-/* Responsive Menü */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: flex; /* Hamburger-Menü nur auf kleinen Bildschirmen anzeigen */
-    }
-
-    .main-nav {
-        display: none; /* Normales Menü ausblenden auf kleinen Bildschirmen */
-    }
-
-    .main-nav.mobile {
-        display: flex;
-    }
-}
