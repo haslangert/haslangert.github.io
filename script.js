@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const mainNav = document.querySelector('.main-nav');
     const parallaxSections = document.querySelectorAll('.parallax');
     const ueberUnsSection = document.querySelector('#ueber-uns');
+    const navLinks = document.querySelectorAll('.main-nav ul li a');
 
     // Funktion für das Verblassen und Bewegen des Hintergrundbildes in der ersten Section
     function handleScrollEffect() {
@@ -25,5 +26,27 @@ document.addEventListener('DOMContentLoaded', function() {
         menuToggle.classList.toggle('active');
         mainNav.classList.toggle('mobile');
         mainNav.classList.toggle('active');
+    });
+
+    // Smooth Scrolling für die Menüeinträge
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+
+            // Smooth Scrolling zur jeweiligen Sektion
+            window.scrollTo({
+                top: targetSection.offsetTop - 80, // 80px Puffer für den fixierten Header
+                behavior: 'smooth'
+            });
+
+            // Menü auf kleinen Bildschirmen schließen
+            if (window.innerWidth <= 768) {
+                menuToggle.classList.remove('active');
+                mainNav.classList.remove('mobile');
+                mainNav.classList.remove('active');
+            }
+        });
     });
 });
