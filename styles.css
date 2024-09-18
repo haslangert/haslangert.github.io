@@ -1,0 +1,236 @@
+/* Allgemeine Stile */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    padding-top: 80px; /* Platz für den festen Header */
+}
+
+/* Header */
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
+    transition: right 0.3s ease;
+    border-bottom: 1px solid transparent; /* Dies verhindert den weißen Balken */
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    color: rgb(255, 153, 0); /* Textfarbe auf RGB(255, 153, 0) gesetzt */
+}
+
+/* Menü-Schaltfläche (Hamburger-Button) */
+.menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    width: 30px;
+    display: none; /* Nicht auf großen Bildschirmen anzeigen */
+}
+
+.menu-toggle .line {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menu-toggle.active .line:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.menu-toggle.active .line:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .line:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+/* Navigation */
+.main-nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.main-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+    color: rgb(255, 153, 0); /* Hover-Effekt: Schriftfarbe auf RGB(255, 153, 0) */
+}
+
+/* Mobile Navigation */
+.main-nav.mobile {
+    position: fixed;
+    top: 60px;
+    right: -250px;
+    width: 250px;
+    height: 100vh;
+    background-color: #333;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px;
+    transition: right 0.3s ease;
+    z-index: 1000;
+}
+
+.main-nav.mobile.active {
+    right: 0;
+}
+
+.main-nav.mobile ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.main-nav.mobile ul li a {
+    font-size: 24px;
+    padding: 10px 0;
+}
+
+/* Parallax und Animationseffekt für alle Sektionen */
+.parallax {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-position 0.8s ease-out, opacity 0.8s ease-out;
+    margin: 0;
+    padding: 0;
+}
+
+/* Höhe für die #ueber-uns Section (100vh) */
+#ueber-uns {
+    height: 100vh;
+    margin-top: -2px; /* Fix für den weißen Balken */
+}
+
+/* Höhe für alle anderen Sections (50vh) */
+.short-section {
+    height: 50vh;
+}
+
+/* Farbgebung und Struktur für die 2. Sektion (helles Orange mit Struktur) */
+.orange-light-bg {
+    background-color: #ffcc80; /* Helles Orange (angepasst an RGB 255, 153, 0) */
+    background-image: url('images/texture.png'); /* Struktur hinzufügen */
+    background-blend-mode: multiply; /* Struktur leicht integrieren */
+    background-size: cover; /* Hintergrundbild anpassen */
+    color: #333;
+}
+
+/* Symbole (verborgen, bis sie angezeigt werden sollen) */
+.symbol {
+    position: absolute;
+    left: 10px;
+    font-size: 40px;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.floralwhite-bg {
+    background-color: FloralWhite;
+    color: #333;
+}
+
+.gold-bg {
+    background-color: gold;
+    color: #333;
+}
+
+.parallax.fade-out {
+    background-position: center 20%; /* Bewegt das Bild nach unten */
+    opacity: 0.7; /* Bild verblassen */
+}
+
+.parallax .content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Symbole anzeigen */
+.symbol.fade-in {
+    opacity: 1;
+}
+
+/* Sektionen */
+section {
+    padding: 40px;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive Menü */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex; /* Hamburger-Menü nur auf kleinen Bildschirmen anzeigen */
+    }
+
+    .main-nav {
+        display: none; /* Normales Menü ausblenden auf kleinen Bildschirmen */
+    }
+
+    .main-nav.mobile {
+        display: flex;
+    }
+}
