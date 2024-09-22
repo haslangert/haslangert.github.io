@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Berechnung des Fading-Effekts und der Bewegung
         let opacity = 1 - scrollY / maxScroll; // Reduziert die Deckkraft beim Scrollen
-        let backgroundPositionY = (scrollY / maxScroll) * 50; // Bewegt das Bild leicht nach unten
+        let backgroundPositionY = 50 + (scrollY / maxScroll) * 20; // Bewegt das Bild leicht nach unten
 
         ueberUnsSection.style.opacity = opacity;
         ueberUnsSection.style.backgroundPosition = `center ${backgroundPositionY}%`;

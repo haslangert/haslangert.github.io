@@ -25,20 +25,21 @@ header {
     z-index: 1000;
     box-sizing: border-box;
     transition: right 0.3s ease;
-    border-bottom: 1px solid transparent; /* Dies verhindert den weißen Balken */
+    border-bottom: 1px solid transparent;
 }
 
 .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    white-space: nowrap; /* Verhindert Zeilenumbruch im Header */
 }
 
 header h1 {
     margin: 0;
     color: rgb(212, 175, 55); /* Dezentes Gold */
     font-weight: 600;
-    font-size: 2.2em; /* Größere Schrift für Mobilgeräte */
+    font-size: 2.2em; /* Standard Schriftgröße */
 }
 
 /* Menü-Schaltfläche (Hamburger-Button) */
@@ -98,7 +99,7 @@ header h1 {
 }
 
 .main-nav ul li a:hover {
-    color: rgb(212, 175, 55); /* Hover-Effekt: Dezentes Gold */
+    color: rgb(212, 175, 55);
 }
 
 /* Mobile Navigation */
@@ -125,8 +126,6 @@ header h1 {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 0;
-    margin: 0;
 }
 
 .main-nav.mobile ul li a {
@@ -134,7 +133,7 @@ header h1 {
     padding: 10px 0;
 }
 
-/* Parallax und Animationseffekt für alle Sektionen */
+/* Parallax */
 .parallax {
     background-attachment: fixed;
     background-size: cover;
@@ -151,7 +150,7 @@ header h1 {
 /* Höhe für die #ueber-uns Section (100vh) */
 #ueber-uns {
     height: 100vh;
-    margin-top: -2px; /* Fix für den weißen Balken */
+    margin-top: -2px;
 }
 
 /* Höhe für alle anderen Sections (50vh) */
@@ -159,24 +158,7 @@ header h1 {
     height: 50vh;
 }
 
-/* Farbgebung und Struktur für die 2. Sektion (helles Orange mit Struktur) */
-.orange-light-bg {
-    background-color: #ffcc80; /* Helles Orange (angepasst an RGB 255, 153, 0) */
-    background-image: url('images/texture.png'); /* Struktur hinzufügen */
-    background-blend-mode: multiply; /* Struktur leicht integrieren */
-    background-size: cover; /* Hintergrundbild anpassen */
-    color: #333;
-}
-
-/* Symbole (verborgen, bis sie angezeigt werden sollen) */
-.symbol {
-    position: absolute;
-    left: 10px;
-    font-size: 40px;
-    opacity: 0;
-    transition: opacity 1s ease; /* Sanftes Ein- und Ausblenden */
-}
-
+/* Farben */
 .floralwhite-bg {
     background-color: FloralWhite;
     color: #333;
@@ -192,11 +174,6 @@ header h1 {
     margin: 0 auto;
     padding: 20px;
     background: rgba(0, 0, 0, 0.5);
-}
-
-/* Symbole anzeigen */
-.symbol.fade-in {
-    opacity: 1;
 }
 
 /* Sektionen */
@@ -217,7 +194,7 @@ footer {
     width: 100%;
 }
 
-/* Responsive Menü */
+/* Responsive Menü und Header-Schriftgröße */
 @media (max-width: 768px) {
     .menu-toggle {
         display: flex; /* Hamburger-Menü nur auf kleinen Bildschirmen anzeigen */
@@ -237,18 +214,19 @@ footer {
     }
 
     header h1 {
-        font-size: 1.8em; /* Kleinere Schrift für mobile Geräte */
+        font-size: 1.5em; /* Kleinere Schriftgröße, um das Umbrechen zu verhindern */
+        white-space: nowrap; /* Verhindert Zeilenumbruch */
     }
 
     section {
-        padding: 20px; /* Weniger Padding auf mobilen Geräten */
+        padding: 20px;
     }
 
     .parallax .content {
-        max-width: 90%; /* Breiterer Inhalt auf mobilen Geräten */
+        max-width: 90%;
     }
 
     .main-nav ul li a {
-        font-size: 16px; /* Kleinere Schriftgröße für das Menü */
+        font-size: 16px;
     }
 }
