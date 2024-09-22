@@ -37,7 +37,7 @@ header {
 
 header h1 {
     margin: 0;
-    color: rgb(255, 255, 255); /* Dezentes Gold */
+    color: rgb(255, 255, 255); /* Weiß für den Header-Titel */
     font-weight: 600;
     font-size: 2.2em; /* Standard Schriftgröße */
 }
@@ -136,8 +136,9 @@ header h1 {
 /* Parallax */
 .parallax {
     background-attachment: fixed;
-    background-size: cover;
+    background-size: cover; /* Das Bild füllt den gesamten Container aus */
     background-position: center;
+    background-repeat: no-repeat; /* Kein Wiederholen des Bildes */
     color: white;
     display: flex;
     align-items: center;
@@ -147,10 +148,10 @@ header h1 {
     padding: 0;
 }
 
-/* Höhe für die #ueber-uns Section (100vh) */
+/* Höhe für die #ueber-mich Section (100vh) */
 #ueber-mich {
     height: 100vh;
-    margin-top: -2px;
+    margin-top: -4px;
 }
 
 /* Höhe für alle anderen Sections (50vh) */
@@ -194,7 +195,7 @@ footer {
     width: 100%;
 }
 
-/* Responsive Menü und Header-Schriftgröße */
+/* Anpassungen für mobile Geräte */
 @media (max-width: 768px) {
     .menu-toggle {
         display: flex; /* Hamburger-Menü nur auf kleinen Bildschirmen anzeigen */
@@ -208,14 +209,17 @@ footer {
         display: flex;
     }
 
-    /* Anpassungen für mobile Geräte */
-    body {
-        padding-top: 60px;
-    }
-
+    /* Verhindert den Textumbruch im Header */
     header h1 {
         font-size: 1.5em; /* Kleinere Schriftgröße, um das Umbrechen zu verhindern */
-        white-space: nowrap; /* Verhindert Zeilenumbruch */
+        white-space: nowrap;
+    }
+
+    /* Optimierung des Hintergrundbildes in der ersten Sektion */
+    #ueber-mich {
+        background-size: cover; /* Bild passt sich dem Container an und bleibt voll sichtbar */
+        background-position: center; /* Zentriert das Bild */
+        background-repeat: no-repeat;
     }
 
     section {
