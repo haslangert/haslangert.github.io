@@ -9,7 +9,7 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: rgb(50, 58, 69);
+    background-color: rgb(255, 255, 255);
     padding-top: 80px; /* Platz für den festen Header */
 }
 
@@ -191,15 +191,16 @@ footer {
     width: 100%;
 }
 
-/* Initial opacity for fade-in sections */
-.fade-in-section {
-    opacity: 0; /* Unsichtbar */
+/* Text-Animation: Ausgangszustand */
+.fade-in-text {
+    opacity: 0; /* Text unsichtbar zu Beginn */
     transform: translateY(20px); /* Leichte Verschiebung nach unten */
-    transition: opacity 1s ease-out, transform 1s ease-out; /* Fade-Effekt */
+    transition: opacity 1s ease-out, transform 1s ease-out; /* Fade-In und Bewegung */
 }
 
-.fade-in-section.visible {
-    opacity: 1; /* Sichtbar */
+/* Sichtbarer Zustand, wenn der Text eingeblendet wird */
+.fade-in-text.visible {
+    opacity: 1; /* Text sichtbar */
     transform: translateY(0); /* Zurück an die ursprüngliche Position */
 }
 
