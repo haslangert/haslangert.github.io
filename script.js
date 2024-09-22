@@ -1,25 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.querySelector('.menu-toggle');
     const mainNav = document.querySelector('.main-nav');
-    const parallaxSections = document.querySelectorAll('.parallax');
-    const ueberUnsSection = document.querySelector('#ueber-mich');
     const navLinks = document.querySelectorAll('.main-nav ul li a');
-
-    // Funktion für das Verblassen und Bewegen des Hintergrundbildes in der ersten Section
-    function handleScrollEffect() {
-        const scrollY = window.scrollY;
-        const maxScroll = window.innerHeight;
-
-        // Berechnung des Fading-Effekts und der Bewegung
-        let opacity = 1 - scrollY / maxScroll + 0.4; // Reduziert die Deckkraft beim Scrollen
-        let backgroundPositionY = 50 + (scrollY / maxScroll) * 20; // Bewegt das Bild leicht nach unten
-
-        ueberUnsSection.style.opacity = opacity;
-        ueberUnsSection.style.backgroundPosition = `center ${backgroundPositionY}%`;
-    }
-
-    // Scroll-Ereignis für das Verblassen und Bewegen des Hintergrundbildes
-    window.addEventListener('scroll', handleScrollEffect);
+    const fadeInSections = document.querySelectorAll('.fade-in-section');
 
     // Menü-Button zum Ein- und Ausblenden des Menüs
     menuToggle.addEventListener('click', function() {
@@ -49,4 +32,32 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Funktion zum Einblenden der Abschnitte beim Scrollen
+    function handleScrollFadeIn() {
+        fadeInSections.forEach(section => {
+            const sectionTop = section.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            // Check if the section is in the viewport
+            if (sectionTop < windowHeight - 100) {
+                section.classList.add('visible');
+            }
+        });
+    }
+
+    // Scroll-Ereignis zum Einblenden der Sektionen
+    window.addEventListener('scroll', handleScrollFadeIn);
+
+    // Direkt beim Laden prüfen, ob Sektionen bereits im Sichtfeld sind
+    handleScrollFadeIn();
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const linkedinLogo = document.querySelector('.linkedin-logo');
+
+    // Verzögerung für die LinkedIn-Logo-Animation (z.B. 1 Sekunde nach dem Laden der Seite)
+    setTimeout(function() {
+        linkedinLogo.classList.add('visible'); // Sichtbar machen und Animation starten
+    }, 1000); // 1000 ms = 1 Sekunde Verzögerung
 });
