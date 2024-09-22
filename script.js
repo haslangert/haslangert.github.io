@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const maxScroll = window.innerHeight;
 
         // Berechnung des Fading-Effekts und der Bewegung
-        let opacity = 1 - scrollY / maxScroll; // Reduziert die Deckkraft beim Scrollen
+        let opacity = 1 - scrollY / maxScroll + 0.4; // Reduziert die Deckkraft beim Scrollen
         let backgroundPositionY = 50 + (scrollY / maxScroll) * 20; // Bewegt das Bild leicht nach unten
 
         ueberUnsSection.style.opacity = opacity;

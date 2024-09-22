@@ -133,30 +133,37 @@ header h1 {
     padding: 10px 0;
 }
 
-/* Parallax */
+/* Parallax für Desktop */
 .parallax {
     background-attachment: fixed;
-    background-size: cover; /* Das Bild füllt den gesamten Container aus */
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat; /* Kein Wiederholen des Bildes */
+    background-image: url('images/Passbild.jpg'); /* Hintergrundbild nur für Desktop */
     color: white;
     display: flex;
+    flex-direction: column; /* Text soll unter dem Bild bleiben */
     align-items: center;
     justify-content: center;
-    transition: background-position 0.8s ease-out, opacity 0.8s ease-out;
     margin: 0;
     padding: 0;
 }
 
-/* Höhe für die #ueber-mich Section (100vh) */
-#ueber-mich {
-    height: 100vh;
-    margin-top: -4px;
+/* Einheitliche Breite der .content-Boxen */
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5); /* Optional: Hintergrund wie in der ersten Sektion */
+    text-align: center; /* Text zentrieren */
 }
 
-/* Höhe für alle anderen Sections (50vh) */
-.short-section {
-    height: 50vh;
+/* Bild für mobile Ansicht */
+.mobile-image {
+    display: none; /* Standardmäßig ausgeblendet */
+    width: 100%;
+    height: auto;
+    margin: 0 auto; /* Zentriere das Bild */
 }
 
 /* Farben */
@@ -165,23 +172,12 @@ header h1 {
     color: #333;
 }
 
-.gold-bg {
-    background-color: gold;
-    color: #333;
-}
-
-.parallax .content {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-/* Sektionen */
-section {
-    padding: 40px;
-    background-color: #fff;
-    color: #333;
+/* Aufzählungspunkte */
+.bullet-points {
+    list-style-type: disc;
+    margin: 20px 0;
+    padding-left: 20px;
+    font-size: 18px;
 }
 
 /* Footer */
@@ -195,7 +191,7 @@ footer {
     width: 100%;
 }
 
-/* Anpassungen für mobile Geräte */
+/* Mobile Ansicht */
 @media (max-width: 768px) {
     .menu-toggle {
         display: flex; /* Hamburger-Menü nur auf kleinen Bildschirmen anzeigen */
@@ -215,22 +211,21 @@ footer {
         white-space: nowrap;
     }
 
-    /* Optimierung des Hintergrundbildes in der ersten Sektion */
-    #ueber-mich {
-        background-size: cover; /* Bild passt sich dem Container an und bleibt voll sichtbar */
-        background-position: center; /* Zentriert das Bild */
-        background-repeat: no-repeat;
+    /* Parallax Hintergrundbild für mobile Geräte entfernen */
+    .parallax {
+        background-image: none;
     }
 
-    section {
-        padding: 20px;
+    /* Bild für mobile Ansicht anzeigen */
+    .mobile-image {
+        display: block;
+        margin: -4px;
+        width: 100%; /* Das Bild wird über die gesamte Breite angezeigt */
+        height: auto;
     }
 
-    .parallax .content {
-        max-width: 90%;
-    }
-
-    .main-nav ul li a {
-        font-size: 16px;
+    /* Inhalt unter dem Bild */
+    .content {
+        margin-top: 20px; /* Abstand zwischen Bild und Text */
     }
 }
