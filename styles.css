@@ -217,7 +217,7 @@ footer {
 .linkedin-logo img {
     width: 40px; /* Kleinere Größe des LinkedIn-Logos */
     height: auto;
-    border-radius: 50%; /* Optionale abgerundete Ecken für das Logo */
+    border-radius: 25%; /* Optionale abgerundete Ecken für das Logo */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Optionaler Schatten für das Logo */
 }
 
