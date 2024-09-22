@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.querySelector('.menu-toggle');
     const mainNav = document.querySelector('.main-nav');
     const parallaxSections = document.querySelectorAll('.parallax');
-    const ueberUnsSection = document.querySelector('#ueber-uns');
+    const ueberUnsSection = document.querySelector('#ueber-mich');
     const navLinks = document.querySelectorAll('.main-nav ul li a');
 
     // Funktion für das Verblassen und Bewegen des Hintergrundbildes in der ersten Section

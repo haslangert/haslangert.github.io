@@ -37,7 +37,7 @@ header {
 
 header h1 {
     margin: 0;
-    color: rgb(212, 175, 55); /* Dezentes Gold */
+    color: rgb(255, 255, 255); /* Dezentes Gold */
     font-weight: 600;
     font-size: 2.2em; /* Standard Schriftgröße */
 }
@@ -148,7 +148,7 @@ header h1 {
 }
 
 /* Höhe für die #ueber-uns Section (100vh) */
-#ueber-uns {
+#ueber-mich {
     height: 100vh;
     margin-top: -2px;
 }
